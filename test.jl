@@ -9,7 +9,7 @@ global_logger(ConsoleLogger(stderr, Logging.Info))
 @info "Compilation done"
 
 res = []
-for T in [336] # [12, 24, 48, 72, 96, 120, 144, 168]
+for T in [12, 24, 48, 72, 96, 120, 144, 168]
     @info "Running T = $T"
     res1 = run_mono(T; verbose=false)
     res2 = run_admm(T, res1[2]; n_iter=50, verbose=false)
